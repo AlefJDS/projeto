@@ -74,11 +74,16 @@ body * {
   top: 50%;
   transform: translateY(-50%);
   z-index: 1;
+
+  animation: slide-back 0.2s forwards;
 }
 
 .light #swith button {
-  right: 0;
-  left: initial;
+  animation: slide-in 0.4s forwards;
+}
+
+#swith button:hover {
+  outline: 8px solid var(--highlight-color);
 }
 
 #swith span {
@@ -162,5 +167,24 @@ footer {
 
   .light {
     --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
+}
+
+/*animação do botão*/
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-back {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
   }
 }
